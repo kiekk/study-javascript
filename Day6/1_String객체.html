@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String 객체</title>
+</head>
+<body>
+    <h2>String 객체</h2>
+    <script>
+        'use strict';
+        const str1 = '안녕하세요. JavaScript';
+        console.log(str1.length);
+        console.log(str1.indexOf('j'));  //찾지 못했을 경우 -1
+        console.log(str1.indexOf('a'));  //처음 나오는 문자를 검색, 8
+        console.log(str1.indexOf('Java'));//문자열인 경우 첫번째 문자 위치를 검색 7
+        console.log(str1.charAt(8));
+        console.log(str1.includes('Java')); //대소문자 구별 true
+        console.log(str1.includes('java')); //대소문자 구별 false
+        console.log(str1.substring(7)); //매개변수가 하나일 경우 해당 위치부터 끝까지 출력
+        console.log(str1.substring(7,11));
+        console.log(str1.substr(7,4));
+        const str2 = "김사과|오렌지|반하나|이메론|박수바|오피치";
+        const student = str2.split("|");
+        
+        student.forEach(function(stu){
+            console.log(stu);
+        });
+        for(let stu of student){
+            console.log(stu);
+        }
+        console.log(str1.replace('안녕하세요.','Hello!'));
+
+        const str3 = "              JavaSript                 ";
+        console.log(`|${str3}|`);
+        console.log(`|${str3.trim()}|`);
+
+        console.log(str3.toUpperCase());
+        console.log(str3.toLowerCase());
+    </script>
+</body>
+</html>

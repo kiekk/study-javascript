@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOM 실습</title>
+<style>
+	div {
+		border:1px solid black;
+		display: inline-block;
+		background: yellow;
+	}
+</style>
+<script>
+	function change(obj,color,size){
+		obj.style.color = color;
+		obj.style.width = size;
+		obj.style.height = size;
+	}
+</script>
+</head>
+<body>
+<!--
+	버튼 2개와 div 태그 한 개를 만든 후 각 객체에 있는 style을 변경한다.
+	style은 color와 size만 변경하고 클릭한 객체만 변경되도록 하는 함수를 선언하여
+	onclick을 통해 실행한다. 함수는 단 한개만 선언한다.  
+-->
+	<input type="button" value="버튼 1" id="button1">
+	<input type="button" value="버튼 2" id="button2" onclick="change(this,'blue','100px')">
+	<div id="div" onclick="change(this,'green','90px')">여기를 클릭하세요</div>
+</body>
+</html>

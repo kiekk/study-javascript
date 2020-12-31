@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>실습</title>
+</head>
+<body>
+	<!--
+		1~9사이의 정수를 입력받아 구구단을 출력하는 페이지 작성
+		단, 1~9사이의 숫자가 아닌 경우를 처리합니다.  
+	-->
+	<h3>구구단</h3>
+	<hr>
+	<script>
+		//while문 반복 확인 변수
+		var check = true;
+		while(check){
+			var num1 = Number(prompt("첫번째 정수를 입력하세요."));
+			var num2 = Number(prompt("두번째 정수를 입력하세요."));
+			//숫자인지 확인
+			if(isNumber(num1) && isNumber(num2)){
+				//1~9 사이의 정수인지 확인
+				if(checkNumberFrom1to9(num1) && checkNumberFrom1to9(num2)){
+					alert(num1 +" * "+num2 +" = "+eval(num1*num2));
+					document.write(num1 +" * "+num2 +" = "+eval(num1*num2)+"<br>");
+				}else {
+					alert("1~9사이의 정수를 입력하세요.");
+				}			
+			}else {
+				alert("숫자를 입력하세요.");			
+			}
+			//confirm이 true일 경우 계속 반복
+			check = confirm("계속하시겠습니까?");
+		}
+		document.close();
+		//open.close
+		//숫자인지 확인
+		function isNumber(num){
+			if(!isNaN(num)){
+				return true;
+			}
+			return false;
+		}
+		//1~9사이의 정수인지 확인
+		function checkNumberFrom1to9(num){
+			if(num >= 1 && num <= 9){
+				return true;
+			}
+			return false;
+		}
+	</script>
+</body>
+</html>

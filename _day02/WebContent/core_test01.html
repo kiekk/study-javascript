@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>[]로 배열 만들기</title>
+</head>
+<body>
+	<h3>[]로 배열 만들기</h3>
+	<hr>
+	<script>
+		//배열은 Array의 객체
+		var datas = [20, 5, 7, 15, 10];
+		
+		document.write("var datas = [20, 5, 7, 15, 10]<br>");
+		//실습(요소 안에 있는 정수만큼 별 출력)
+		for(var i = 0; i < datas.length;i++){
+			for(var j = 0;j < datas[i];j++){
+				document.write("*");				
+			}
+			document.write("<br>");
+		}
+		/* for(var i = 0;i < datas.length;i++){
+			var size = datas[i];
+			while(size > 0){
+				document.write("*");
+				size--;
+			}
+			document.write(datas[i]+"<br>");
+		} */
+	</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>location객체 - 2</title>
+</head>
+<body>
+    <h2>location 객체 - 2</h2>
+    <form action="" name="myform">
+        <p><labe>네이버 <input type="radio" value="naver" name="site" checked></labe></p>
+        <p><label>구글 <input type="radio" value="google" name="site"></label></p>
+        <p><label>다음 <input type="radio" value="daum" name="site"></label></p>
+        <p><label>setInterval함수 예제 <input type="radio" value="page" name="site"></label></p>
+        <p><input type="buttom" value="이동" onclick="sendIt()"></label></p>
+    </form>
+    <script>
+        'use strict';
+        
+        function sendIt(){
+            const frm = document.myform;
+            if(frm.site.value == 'naver'){
+                location.href = "https://www.naver.com";
+            }else if(frm.site.value == 'google'){
+                location.href = "https://www.google.com";
+            }else if(frm.site.value == 'daum'){
+                location.href = "https://www.daum.net";
+            }else {
+                location.href = "5_setInterval함수.html";
+            }
+        }
+
+    </script>
+</body>
+</html>

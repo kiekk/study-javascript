@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>실습3</title>
+<link rel="stylesheet" type="text/css" href="function_task.css">
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Jua&display=swap" rel="stylesheet">
+<style>
+	.area {
+		margin:0 auto;
+		padding:0;
+		position: relative;
+		width: 100%;
+		height: 450px;
+		box-sizing:border-box;
+		display: inline-block;
+	}
+	#circle {
+		margin-left: 15%;
+		width: 45px;
+		height: 45px;
+		position: absolute;
+		background: yellow;
+		border: 3px solid #ab47bc;
+		border-radius: 50%;
+		line-height: 45px;
+		text-align: center;
+		font-weight: bold;
+		font-family:Black Han Sans;
+		font-size: 24px;
+	}
+</style>
+<script>
+	var chars = ['영','일','이','삼','사','오','육','칠','팔','구'];
+	//replace
+	function change() {
+		var input = document.getElementById('input').value;
+		var textfield = document.getElementById('textarea');
+		var circle = document.getElementById('circle');
+		var temp = "";	//변경된 문자열을 담을 임시변수
+		var flag = 0;
+		if(input == "") history.go(0);
+		if(!isNaN(Number(input))){	//input의 입력된 값이 숫자, 문자인지 확인
+			for(var i=0;i<input.length;i++){
+				if(input.charAt(i) == '.'){
+					temp += '점';
+					flag = 1;
+					continue;
+				}
+				temp += chars[input.charAt(i)];	//input의 문자열에 담긴 번호의 인덱스에 해당하는 chars문자열을 변환해서 저장
+			}
+			textfield.innerHTML = temp; //textarea에 저장한 temp 문자열 추가 
+			if(flag){
+				circle.innerHTML = 2;				
+			}else { 
+				circle.innerHTML = 3;
+			}
+		}else {
+			textfield.innerHTML = "숫자만 입력해주세요.";
+			circle.innerHTML = 4;
+		}
+	}
+</script>
+<script>
+	function changeToHangle(number){
+		if(!isNaN(number)){
+			var data = number + "";
+			var hangle = "공일이삼사오육칠팔구";
+			var result = "";
+			
+			//i는 data의 길이만큼 0부터 1씩 증가
+			for(let i in data){
+				//전달받은 값에 0부터 하나씩 접근해서 hangle에 접근
+				result += hangle[date.charAt(i)];
+			}
+			return result;	//undefined, "", 한글
+		}
+	}
+	function getResult(){
+		var input = document.getElementById('num').value;
+		var result = changeToHangle(input);
+		var textAreaTag = document.getElementById('result');
+		var divTag = document.getElementById('circle');
+		if(result == undefined || result == ""){
+			textAreaTag.innerHTML = "숫자만 입력하세요.";
+		}else {
+			//숫자 혹은 마침표를 포함한 값을 입력했을 때 들어오는 영역(정상일 때)
+			
+			var temp = result;
+			//마침표가 있다면 undefined로 표시되고, 이를 '점'으로 변경해준다.
+			result = result.replace(undefined, "점");
+			//변경이 되었을때(.이 있을때)
+			if(temp != result){
+				divTag.innerHTML = "2";
+			}else {
+				divTag.innerHTML = "3";				
+			}
+			//결과를 textarea에 표시
+			textAreaTag.innerHTML = result;
+		}
+	}
+</script>
+</head>
+<body>
+	<div class="area">
+		<div id="circle">1</div>
+		<fieldset>
+			<legend>숫자를 한글로 변경</legend>
+			<textarea id="textarea" rows="2" cols="10" readonly>결과 표시 부분</textarea>
+			<input type="text" id="input" autofocus>
+			<button id="button" onclick="change()">변경</button>
+		</fieldset>
+	</div>
+</body>
+<script>
+</script>
+</html>

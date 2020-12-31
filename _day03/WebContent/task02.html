@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>실습2</title>
+<link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+<style>
+	table {
+		margin:0 auto;
+		border: 1px solid black;
+	}
+	caption, td {
+		font-family: 'Russo One', sans-serif;
+		font-weight: bold;
+	}
+	td {
+		border: 1px solid black;
+		width: 200px;
+		text-align: center;
+	}
+	thead {
+		background: #fffbe7;
+	}
+	fieldset {
+		margin:0 auto;
+		width: 400px;
+		text-align: center;
+		font-weight: bold;
+	}
+	input {
+		display:inline-block;
+		margin:0 auto;
+		text-align: center;
+	}
+</style>
+<script>
+	function change(td){
+		td.parentElement.style.background = 'red';
+		td.innerHTML = "★"+ td.textContent;
+	}
+	function reset(trs){
+		for(var i = 1;i < trs.length;i++){
+			var td = trs[i].firstElementChild;
+			if((td.textContent).charAt(0) == '★'){
+				trs[i].style.background = 'white';
+				td.innerHTML = (td.textContent).substring(1,((td.textContent).length));				
+			}
+		}
+	}
+	function get(){
+		var trs = document.getElementsByTagName('tr');	//모든 행
+		var answer = document.getElementById('input');	//input태그를 가져옵니다.
+		var check = false;
+		if(answer.value == "") alert("입력해주세요");
+		else{
+			reset(trs);	//기존 행 초기화
+			for(var i = 1; i<trs.length;i++){
+				var td = trs[i].firstElementChild;		//trs의 행들의 첫번째 컬럼을 가져옴 
+				if(td.textContent == answer.value){			//가져온 컬럼의 텍스트를 비교
+					check = true;						//일치하는 값이 있으면 check를 true로 변환
+					change(td);		//입력된 값으로 변경
+					break;
+				}
+			}
+			if(!check) alert("일치하는 값이 없습니다.");
+		}
+		answer.value = "";		//input태그 초기화
+		answer.focus();			//input태그 포커스
+	}
+	
+</script>
+</head>
+<body>
+	<table>
+		<caption>요금표</caption>
+		<thead>
+			<tr>
+				<td>구분</td>
+				<td>요금</td>
+			</tr>
+		</thead>
+		<tr>
+			<td>아동</td>
+			<td>무료</td>
+		</tr>
+		<tr>
+			<td>청소년</td>
+			<td>2000원</td>
+		</tr>
+		<tr>
+			<td>성인</td>
+			<td>5000원</td>
+		</tr>
+	</table>
+	<fieldset>
+		<legend>구분</legend>
+		<input type="text" id="input" onkeypress="get()" autofocus>
+		<input type="button" value="확인" id="submit">
+	</fieldset>
+</body>
+<script>
+	document.getElementById('submit').addEventListener("click",get);
+</script>
+</html>

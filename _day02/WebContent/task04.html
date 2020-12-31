@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>실습4</title>
+</head>
+<body>
+	<h3>pr("%",5)의 결과가 %%%%%로 나오는 함수 작성</h3>
+	<hr>
+	<script>
+		//1번
+		//value = 반복할 문자
+		//times = 반복할 횟수
+		function pr(value, times){
+			var message = "";
+			for(var i = 0;i < times; i++){
+				message += value;
+			}
+			document.write(message);
+		}
+		pr("%",5);
+	</script>
+	<!--
+ 	<script>
+		//2번
+		var message = ""; //결과를 저장할 변수
+		//value = 반복할 문자
+		//times = 반복할 횟수
+		//message에 value를 times만큼 누적해서 return
+		function pr(value, times, message){
+			for(var i = 0;i < times; i++){
+				message += value;
+			}
+			return message;
+		}
+		//문자가 입력될 때 까지 반복
+		while(true){
+			var value = prompt("반복할 문자를 입력하세요.");
+			if(value == null || value == "") alert("문자를 입력해주세요");
+			else break;			
+		}
+		//반복할 횟수가 숫자이며, 0보다 클 때 까지 반복
+		while(true){
+			var times = prompt("반복횟수를 입력하세요.");
+			if(times <= 0) alert("0보다 큰 수를 입력해주세요.");
+			else if(isNaN(times)) alert("숫자를 입력해주세요.);
+			else break;
+		}
+		//pr함수에 인자를 전달하고, return값을 다시 message에 저장
+		message = pr(value,times,message);
+		//출력
+		document.write(message);
+	</script>
+	-->
+</body>
+</html>

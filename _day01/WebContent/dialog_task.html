@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>다이얼로그 실습</title>
+</head>
+<body>
+	<script>
+		/*
+			prompt()메소드를 통해 이름, 국어점수, 영어점수, 수학점수를 
+			입력받아서 아래와 같이 출력하는 프로그램 작성
+			
+			※형변환은 Number로 합니다.
+			※소수점 자르기는 toFixed(자리수)를 사용합니다.
+			예)3.2222.toFixed(2) == 3.22
+		 */
+		/*
+			출력예시)
+			이름 : 홍길동
+			국어점수 : 90
+			영어점수 : 80
+			수학점수 : 70
+			입력하신 정보가 맞는지 확인해주시기 바랍니다.
+		 */
+		/*
+			true일 때
+			이름 : 홍길동
+			국어점수 : 90
+			영어점수 : 80
+			수학점수 : 70
+			총점 : 240점
+			평균 : 80점
+		 */
+		/*
+			false일 때
+			처음부터 다시 작성해주시기 바랍니다.
+		 */
+
+	
+		var name = prompt("이름을 입력하세요.");
+		if (name == null || name == "") {
+			alert("이름은 반드시 입력해야 합니다.");
+			
+		}else {
+			
+			var korScore = Number(prompt("국어점수를 입력하세요."));
+			var engScore = Number(prompt("영어점수를 입력하세요."));
+			var matScore = Number(prompt("수학점수를 입력하세요."));
+			
+			if(typeCheck(korScore) && typeCheck(engScore) && typeCheck(matScore)){
+				var info = "이름 : " + name + "\n국어점수 : " + korScore + "점\n영어점수 : "
+				+ engScore + "점\n수학점수 : " + matScore +"점";
+				var message = info + "\n입력하신 정보가 맞는지 확인해주시기 바랍니다.";
+				var check = confirm(message);
+				
+				if (check) {
+					var sum = korScore + engScore + matScore;
+					var avg = sum / 3;
+					alert(info + "\n총점 : " + sum + "점\n평균 : " + avg.toFixed(2)) +"점";
+				} else {
+					alert("취소하셨습니다.\n처음부터 다시 작성해주세요");
+				}
+			}else {
+				alert("숫자가 아닙니다.\n다시 입력해주세요.");
+			}
+		}
+		
+		function typeCheck(score){
+			if(typeof score === "number" && !isNaN(score)){
+					return true;					
+			}
+			return false;
+		}
+	</script>
+</body>
+</html>

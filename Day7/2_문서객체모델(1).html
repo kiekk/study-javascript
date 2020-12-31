@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문서 객체 모델 - 1</title>
+</head>
+<body>
+    <h2 name="model">문서 객체 모델 - 1</h2>
+    <ul>
+        <li name="model">HTML</li>
+        <li>CSS</li>
+        <li id="js" class="js">JavaScript</li>
+        <li id="js" class="js">jQuery</li>
+        <li class="server">Apache</li>
+        <li class="server">PHP</li>
+        <li class="server">MySQL</li>
+        <li id="js" class="js">Node.js</li>
+        <li id="js" class="js">React</li>
+    </ul>
+    <script>
+        'use strict';
+        const tagName = document.getElementsByTagName('li');
+        for(let i=0;i<tagName.length;i++){
+            tagName.item(i).style.color = "gold";
+        }
+
+        const className = document.getElementsByClassName("js");
+        for(let i=0;i<className.length;i++){
+            className.item(i).style.color = "deepskyblue";
+        }
+        const id = document.getElementById("js");
+        id.style.color = "deeppink";
+
+        const name = document.getElementsByName('model');
+        for(let i=0;i<name.length;i++){
+            name.item(i).style.color = "red";
+        }
+
+        const querySelector = document.querySelectorAll("li.server");
+        for(let i=0;i<querySelector.length;i++){
+            querySelector.item(i).style.color = "blue";
+        }
+    </script>
+</body>
+</html>

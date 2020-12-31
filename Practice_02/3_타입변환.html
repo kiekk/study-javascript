@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>타입변환</title>
+</head>
+<body>
+    <h2>타입변환</h2>
+    <script>
+        'use strict'
+        let var1 = 10;
+        console.log(var1);
+        console.log(typeof var1);
+        
+        var1 = '안녕하세요. Javascript!';   //묵시적 타입 변환
+        console.log(var1);
+        console.log(typeof var1);
+
+        let var2 = '10';
+        let var3 = 5;
+        let result = var2 + var3;   // + : 연결, 더하기
+        console.log(result);
+        result = var2 - var3;
+        console.log(result);
+        result = var2 * '안녕';
+        console.log(result);
+
+        let var4 = '20';
+        let var5 = '10.5';
+        result = Number(var4) + Number(var5);
+        console.log(result);
+        result = parseInt(var4) + parseInt(var5);
+        console.log(result);
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문서 객체 모델 - 2</title>
+</head>
+<body>
+    <h2>문서 객체 모델 - 2</h2>
+    <div>
+        <nav id="gnb">
+            <ul>
+                <li class="first">내용 1</li>
+                <li>내용 2</li>
+                <li>내용 3</li>
+            </ul>
+        </nav>
+    </div>
+    <script>
+        'use strict';
+        const gnb = document.getElementById("gnb");
+        console.log(gnb);
+        console.log(gnb.parentNode);
+        console.log(gnb.children[0]);
+        console.log(gnb.children[0].nextElementSibling);
+        console.log(gnb.children[0].children[1].nextElementSibling);
+        console.log(gnb.children[0].firstchild);    //text노드를 포함해서 검색
+        console.log(gnb.children[0].firstElementChild);
+    </script>
+</body>
+</html>

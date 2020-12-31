@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>실습3</title>
+<link rel="stylesheet" type="text/css" href="function_task.css">
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Jua&display=swap" rel="stylesheet">
+<style>
+	body {
+		margin:150px 0 0 0;
+		padding:0;
+	}
+	#wrap {
+		margin:0;
+		padding:0;
+		width:100%;
+		height: 900px;
+	}
+	.area {
+		margin:0;
+		padding:0;
+		position: relative;
+		width:49%;
+		height: 450px;
+		box-sizing:border-box;
+		display: inline-block;
+	}
+	.circle {
+		margin-left: 5%;
+		width: 45px;
+		height: 45px;
+		position: absolute;
+		background: yellow;
+		border: 3px solid #ab47bc;
+		border-radius: 50%;
+		line-height: 45px;
+		text-align: center;
+		font-weight: bold;
+		font-family:Black Han Sans;
+		font-size: 24px;
+	}
+</style>
+<script>
+	var chars = ['영','일','이','삼','사','오','육','칠','팔','구'];
+	//replace
+	function change(obj) {
+		var input = (obj.previousElementSibling);
+		var value = input.value;
+		var textfield = input.previousElementSibling;
+		var temp = "";	//변경된 문자열을 담을 임시변수
+		if(!isNaN(Number(value))){	//input의 입력된 값이 숫자, 문자인지 확인
+			for(var i = 0 ;i < value.length; i++){
+				if(value.charAt(i) == '.'){
+					temp += '점';
+					continue;
+				}
+				temp += chars[value.charAt(i)];	//input의 문자열에 담긴 번호의 인덱스에 해당하는 chars문자열을 변환해서 저장
+			}
+			textfield.innerHTML = temp; //textarea에 저장한 temp 문자열 추가 
+		}else {
+			textfield.innerHTML = "숫자만 입력해주세요."; 
+		}
+	}
+</script>
+</head>
+<body>
+	<div id="wrap">
+		<div class="area">
+			<div class="circle">1</div>
+			<fieldset>
+				<legend>숫자를 한글로 변경</legend>
+				<textarea id="textarea" rows="2" cols="10" readonly>결과 표시 부분</textarea>
+				<input type="text" id="input" autofocus>
+				<button id="button" onclick="change(this)">변경</button>
+			</fieldset>
+		</div>
+		<div class="area">
+			<div class="circle">2</div>
+			<fieldset>
+				<legend>숫자를 한글로 변경</legend>
+				<textarea id="textarea" rows="2" cols="10" readonly>결과 표시 부분</textarea>
+				<input type="text" id="input" autofocus>
+				<button id="button" onclick="change(this)">변경</button>
+			</fieldset>
+		</div>
+		<div class="area">
+			<div class="circle">3</div>
+			<fieldset>
+				<legend>숫자를 한글로 변경</legend>
+				<textarea id="textarea" rows="2" cols="10" readonly>결과 표시 부분</textarea>
+				<input type="text" id="input" autofocus>
+				<button id="button" onclick="change(this)">변경</button>
+			</fieldset>
+		</div>
+		<div class="area">
+			<div class="circle">4</div>
+			<fieldset>
+				<legend>숫자를 한글로 변경</legend>
+				<textarea id="textarea" rows="2" cols="10" readonly>결과 표시 부분</textarea>
+				<input type="text" id="input" autofocus>
+				<button id="button" onclick="change(this)">변경</button>
+			</fieldset>
+		</div>
+	</div>
+</body>
+<script>
+</script>
+</html>

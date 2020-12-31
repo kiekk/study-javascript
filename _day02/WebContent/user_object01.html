@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>사용자 객체 선언 및 초기화</title>
+<script>
+	//잔액 조회
+	function show_balance(){
+		return this.balance;
+	}
+	//입금
+	function deposit(money){
+		this.balance += money;
+	}
+	//출금(마이너스 통장)
+	function withdraw(money){
+		this.balace -+ money;
+	}
+	var account = new Object();
+	account.owner = "이름";
+	account.code = "1234";
+	account.balance = 105000;
+	
+	account.show_balance = show_balance;
+	account.deposit = deposit;
+	account.withdraw = withdraw;
+</script>
+</head>
+<body>
+	<h3>new Object()로 사용자 객체 만들기</h3>
+	<hr>
+	<script>
+		with(document){
+			write("account : ");
+			write(account.owner + ",");
+			write(account.code + ",");
+			write(account.balance +"<br>");
+		}
+		account.deposit(10000);
+		document.write("10,000원 입금 후 잔액 : " + account.show_balance() + "원<br>");
+		
+		account.withdraw(1000000);
+		document.write("1,000,000원 출금 후 잔액 : " + account.show_balance() + "원<br>");
+	</script>
+</body>
+</html>

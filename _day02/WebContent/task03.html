@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>실습3</title>
+</head>
+<body>
+	<h3>분석 결과</h3>
+	<hr>
+	
+	<script>
+		var password = '1234';
+		
+		while(true){
+			var input = prompt("비밀번호를 입력하세요");
+			if(password == input){
+				document.write("통과!");
+				break;
+			}else {
+				alert("땡!");
+			}
+		}
+	</script>
+</body>
+</html>

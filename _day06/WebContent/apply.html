@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>apply() 메소드</title>
+</head>
+<body>
+
+</body>
+<script>
+	function Person(name, age, gender) {
+		this.name = name;
+		this.age = age;
+		this.gender = gender;
+	}
+	
+	var foo = {};
+	
+	
+	Person.apply(foo, ['foo', 30, 'man']);
+	console.dir(foo);
+</script>
+</html>

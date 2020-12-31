@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>실습</title>
+<!-- 외부 css파일 불러오기 -->
+<link rel="stylesheet" type="text/css" href="object_task.css">
+</head>
+<body>
+	<fieldset>
+		<legend>자동차 주행</legend>
+		<!-- 버튼 동작 및 연산에 따른 결과 메세지를 표시할 영역(textarea) -->
+		<textarea id="result" rows="1" cols="20" readonly>현재 상태 표시</textarea>
+		<!-- 상황에 알맞는 이미지로 표시하기 위한 영역(img) -->
+		<img id="img"alt="이미지" src="./images/출발전.png">
+		<!-- input 태그 -->
+		<!-- 시동을 켜기 위해서 입력한 비밀번호 -->
+		<!-- 첫 화면에서는 보이지 않도록 hidden 값을 줍니다. -->
+		<!-- 시동 켜기 버튼을 눌렀을 때 hidden이 visible로 변하면서 보이게 됩니다. -->
+		<!-- onkeyup속성은 key 이벤트가 발생되었을 때 실행할 문장을 작성하도록 해줍니다. -->
+		<input id="input" type="text" placeholder="비밀번호 입력" onkeyup="activeEnter()">
+		<!-- 시동켜기와 시동끄기, 초기화 버튼 -->
+		<button id="engineStart">시동 켜기</button>
+		<button id="engineStop">시동 끄기</button>
+		<!-- history 객체에 담겨진 페이지 중 0번째(첫번째)로 이동합니다. -->
+		<!-- 첫 화면으로 이동할 수 있습니다. -->
+		<button id="reset">초기화</button>
+	</fieldset>
+</body>
+<!-- DOM 사용시 항상 HTML코드 하단에서 사용해야 합니다. -->
+<<script type="text/javascript" src="object_task.js"></script>
+</html>

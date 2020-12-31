@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>location 페이지 이동 예제</title>
+</head>
+<body>
+	<h1>히스토리 목록의 개수</h1>
+	<p>아래 버튼을 눌러 새로운 문서를 연 후에 브라우저의 뒤로가기 버튼을 눌러보세요!</p>
+	<button onclick="openDocument()">새로운 문서 열기</button>
+	<p id="text"></p>
+</body>
+<script>
+	function openDocument(){
+		//현재 페이지는 새로운 페이지로 인식하지 않습니다.
+		//location.assign("location_test2.html");
+		location.assign("history_test.html");
+		
+		//replace는 뒤로가기가 되지 않습니다. history를 새로만들기 때문에 이동한 페이지를 현재 페이지로 인식하게 됩니다.
+		//ex) 결제화면..등등 이전화면으로 되돌아갈 필요가 없는 경우에 사용합니다.
+		//location.replace("http://www.naver.com");
+	}
+	document.getElementById("text").innerHTML = "현재 브라우저의 히스토리 목록의 개수는 " + history.length + "개 입니다.";
+</script>
+</html>

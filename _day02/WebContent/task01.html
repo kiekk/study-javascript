@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>실습1</title>
+<style>
+	div {
+		width: 200px;
+		height: 200px;
+		border: 1px solid black;
+	}
+</style>
+</head>
+<body>
+	<h3>마우스를 올려보세요</h3>
+	<hr>
+	<div onmouseover="over(this)" onmouseout="out(this)">
+		여기에 마우스를 올리면 노란색으로 변합니다.
+	</div>
+	<script>
+		function over(obj){
+			obj.style.background="yellow";
+		}
+		function out(obj){
+			obj.style.background="white";
+		}
+	</script>
+</body>
+</html>

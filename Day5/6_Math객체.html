@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math 객체</title>
+</head>
+<body>
+    <h2>Math 객체</h2>
+    <script>
+        'use strict';
+        console.log(Math.min());
+        console.log(Math.min(1,10,-10,1000,0));
+        console.log(Math.min(1,10,-10,"1000",0));
+        console.log(Math.min(1,10,-10,"문자열",0));
+
+        console.log(Math.max());
+
+        console.log(Math.round(10.49)); //10
+        console.log(Math.round(10.5));  //11
+        console.log(Math.round(-10.5)); //-10
+        console.log(Math.round(-10.51));    //--11
+
+        console.log(Math.floor(10.49)); //10
+        console.log(Math.floor(10.5));  //10
+        console.log(Math.floor(-10.5)); //-11
+        console.log(Math.floor(-10.51));    //-11
+
+        console.log(Math.floor(10.49)); //11
+        console.log(Math.floor(10.5));  //11
+        console.log(Math.floor(-10.5)); //-10
+        console.log(Math.floor(-10.51));    //-10
+
+        let rm = Math.random(); //0~1
+        console.log(rm);
+
+        //1 ~ 10
+        console.log(Math.floor((Math.random()* 10)) + 1);
+    </script>
+</body>
+</html>

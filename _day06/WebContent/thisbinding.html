@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>this binding 예제</title>
+</head>
+<body>
+
+</body>
+<script>
+	var value = 100;
+	
+	var myObject = {
+		value: 1,
+		func1: function() {
+			var that =  this; //func1()의 this를 저장
+			
+			this.value += 1;
+			console.log('func1() called. this.value : ' + this.value);
+			
+			func2 = function() {
+				that.value += 1;	//that으로 접근
+				console.log('func2() called. this.value : ' + that.value);
+				
+				func3 = function() {
+					that.value += 1;	//that으로 접근
+					console.log('func3() called. this.value : ' + that.value);
+				}
+				func3();
+			}
+			func2();
+		}	
+	};
+	myObject.func1();
+</script>
+</html>

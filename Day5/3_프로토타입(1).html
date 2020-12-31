@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로토타입 - 1</title>
+</head>
+<body>
+    <h2>프로토타입 - 1</h2>
+    <script>
+        'use strict';
+        function Dog(name, color, age){
+            this.name = name;
+            this.color = color;
+            this.age = age;
+        }
+
+        const rucy = new Dog('루시','white', 9);
+        const ppomi = new Dog('뽀미','white', 4);
+
+        rucy.family = '포메리안';
+        rucy.breed = function(){
+            return this.color + ' ' + this.family;
+        }
+
+        console.log(rucy);
+        console.log(rucy.name);
+        console.log(rucy.color);
+        console.log(rucy.age);
+        console.log(rucy.family);
+        console.log(rucy.breed());
+    </script>
+</body>
+</html>

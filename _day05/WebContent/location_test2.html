@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>location 객체의 href 예제</title>
+</head>
+<body>
+	<!-- 사용자가 원하는 사이트로 이동 -->
+	<form name="myForm">
+	<!-- radio 버튼 3개 만들기 -->
+		<p>
+			<label>네이버<input type="radio" value="naver" name="site"></label>
+		</p>
+		<p>
+			<label>다음<input type="radio" value="daum" name="site"></label>
+		</p>
+		<p>
+			<label>구글<input type="radio" value="google" name="site"></label>
+		</p>
+		<p>
+			<input type="button" onclick="sendit()" value="이동">
+		</p>
+	</form>
+</body>
+<script>
+	function sendit(){
+		//form 태그는 element..를 쓰지않고 바로 name명을 작성합니다.
+		var frm = document.myForm;
+		
+		//form태그에 있는 site를 찾아서 선택한 valu값을 가져옵니다.
+		if(frm.site.value == "naver"){
+			location.href = "http://www.naver.com";
+		}else if(frm.site.value == "daum"){
+			location.href = "http://www.daum.net";
+		}else if(frm.site.value == "google"){
+			location.href = "http://www.google.com";
+		}
+	}
+</script>
+</html>

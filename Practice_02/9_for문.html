@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for문</title>
+</head>
+<body>
+    <h2>for문</h2>
+    <script>
+        'use strict'
+
+        for(let i=1;i<=100;i++){
+            if(i % 2 == 0) continue;
+            console.log('안녕하세요. JavaScript');
+            console.log(`현재 j의 값 : ${i}`);
+            if(i==77) break;
+        }
+        //console.log(i);   오류
+        
+        let j = 1;
+        while(true){
+            console.log(`현재 j의 값 : ${j}`);
+            if(j==77) break;
+            j++;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>사용자 객체 선언 및 초기화</title>
+</head>
+<body>
+	<script>
+		var account = {
+			owner : "이름",
+			code : "1234",
+			balance : 105000,
+			deposit : function(money){
+				this.balance += money;	
+			},
+			withdraw : function(money){
+				this.balace -+ money;
+			},
+			show_balace : function(){
+				return this.balance;
+			}
+		}
+		document.write("account : ");
+		document.write(account["owner"] + ",");
+		document.write(account["code"] + ",");
+		document.write(account["balance"] + "<br>");
+	</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var myObject = {
+            name: 'foo',
+            sayName : function(){
+                console.log('My Name is ' + this.name);
+            }
+        };
+
+        myObject.sayName();                                 //결과 : My Name is foo
+        console.log(myObject.hasOwnProperty('name'));       //결과 : true
+        console.log(myObject.hasOwnProperty('nickName'));   //결과 : false
+        myObject.sayNickName();                             //결과 : error
+    </script>
+</body>
+</html>

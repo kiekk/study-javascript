@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var Animal = function(){};
+
+        Animal.prototype = {
+            walk : function(){
+                console.log('종종...');
+            }
+        };
+        var SuperAnimal = function(){};
+        SuperAnimal.prototype = {
+            walk : function(){
+                console.log('다다다닷!');
+            }
+        };
+
+        var Dog = function(){};
+        Dog.prototype = new Animal();
+        var d1 = new Dog();
+        d1.walk();   //결과 : 종종...
+
+        Dog.prototype = new SuperAnimal();
+        var d2 = new Dog();
+
+        d2.walk();  //결과 : 다다다닷!
+        d1.walk();  //결과 : 종종...
+    </script>
+</body>
+</html>

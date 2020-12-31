@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>document.write(),writeln() 사용</title>
+</head>
+<body>
+	<script>
+		//document.write는 태그를 문자열로 인식하지 않고 태그로 인식하여
+		//콘텐츠를 적용시킬 수 있습니다.
+		//1. writeln()은 \n(개행문자)를 포함하고 있기 때문에 \n을 한 단어로 인식하여 한칸 띄우게 됩니다.
+		//브라우저에서 개행은 <br>태그로 작성해야 하기 때문에, \n을 개행으로 인식되게 하려면 <pre>태그로 감싸줘야 합니다.
+		//2. write()에 <br>태그를 작성해서 개행 할 수도 있습니다.
+		document.write("<h3>Welcome</h3>");
+		document.write("<pre>");
+		document.writeln("hello");
+		document.write("hi");
+		document.write("</pre>");
+	</script>
+</body>
+</html>

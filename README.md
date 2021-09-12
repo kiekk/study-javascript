@@ -1,4 +1,4 @@
-# study_javascript
+# study-javascript
 
 JavaScript 공부 내용입니다.
 
